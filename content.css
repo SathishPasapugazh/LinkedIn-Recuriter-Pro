@@ -1,0 +1,306 @@
+/* Loading Overlay */
+#ai-recruiter-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.ai-loader-content {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #0a66c2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Results Panel */
+#ai-recruiter-results {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 380px;
+  height: 600px; /* Set explicit initial height for resize to work reliably */
+  min-width: 320px;
+  min-height: 300px;
+  max-height: 95vh;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+  z-index: 999998;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  animation: slideIn 0.3s ease-out;
+  resize: both;
+  overflow: hidden; /* Required for resize */
+}
+
+/* Ensure resize handle is visible and usable */
+#ai-recruiter-results::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  cursor: nwse-resize;
+  background: linear-gradient(135deg, transparent 50%, #ccc 50%, #ccc 60%, transparent 60%, transparent 70%, #ccc 70%, #ccc 80%, transparent 80%);
+  pointer-events: none;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.ai-panel-header {
+  background: #0a66c2;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move; /* Indicate draggable */
+}
+
+.ai-panel-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  pointer-events: none; /* Let drag handle through */
+}
+
+#ai-panel-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  pointer-events: auto; /* Ensure close button works */
+}
+
+.ai-panel-body {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Chat UI */
+.ai-chat-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.ai-chat-history {
+  height: 150px;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px;
+  resize: vertical;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+}
+
+.ai-chat-msg {
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 90%;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.ai-chat-msg strong {
+  font-weight: 700;
+}
+
+.ai-chat-msg ul {
+  margin: 8px 0;
+  padding-left: 18px;
+}
+
+.ai-chat-msg li {
+  margin-bottom: 4px;
+}
+
+.ai-chat-msg.user {
+  align-self: flex-end;
+  background: #e7f3ff;
+  color: #004182;
+}
+
+.ai-chat-msg.ai {
+  align-self: flex-start;
+  background: #f3f2ef;
+  color: #333;
+}
+
+.ai-chat-msg.error {
+  background: #fdf0f1;
+  color: #d11124;
+}
+
+.ai-chat-input-container {
+  display: flex;
+  gap: 8px;
+}
+
+#ai-chat-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#ai-chat-send {
+  background: #0a66c2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#ai-chat-send:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.tag small {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-left: 4px;
+}
+
+.ai-score-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.ai-score-circle {
+  width: 70px;
+  height: 70px;
+  border: 6px solid #0a66c2;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-val {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.score-label {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.ai-recommendation {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.ai-recommendation.shortlist { color: #057642; }
+.ai-recommendation.maybe { color: #c37d16; }
+.ai-recommendation.reject { color: #d11124; }
+
+.ai-section {
+  margin-bottom: 16px;
+}
+
+.ai-section h3 {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: #333;
+}
+
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.tag.match {
+  background: #e7f3ed;
+  color: #057642;
+}
+
+.tag.missing {
+  background: #fdf0f1;
+  color: #d11124;
+}
+
+.ai-panel-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  background: #f9fafb;
+}
+
+#ai-rerun-btn {
+  width: 100%;
+  padding: 8px;
+  background: white;
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#ai-rerun-btn:hover {
+  background: #f0f7ff;
+}

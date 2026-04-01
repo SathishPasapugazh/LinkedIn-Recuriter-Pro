@@ -1,0 +1,176 @@
+:root {
+  --primary: #0a66c2;
+  --primary-hover: #004182;
+  --bg: #f3f2ef;
+  --text: #191919;
+  --border: #e0e0e0;
+  --white: #ffffff;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.actions, .form-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 1600px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  transition: background 0.2s;
+}
+
+.primary-btn {
+  background-color: var(--primary);
+  color: white;
+  flex: 1;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.primary-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.secondary-btn:hover {
+  background-color: rgba(10, 102, 194, 0.1);
+}
+
+#settings-btn {
+  background: none;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.jd-list-container {
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.jd-title-text {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.jd-item-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.icon-btn {
+  background: none;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.help-text {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}

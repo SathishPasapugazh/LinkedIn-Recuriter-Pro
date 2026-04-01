@@ -1,0 +1,5 @@
+{
+  "name": "LinkedIn AI Recruiter Pro",
+  "description": "A Chrome Extension to analyze LinkedIn profiles against Job Descriptions using Gemini AI.",
+  "requestFramePermissions": []
+}

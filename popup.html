@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Recruiter Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Recruiter Pro</h1>
+      <button id="settings-btn" title="Settings">⚙️</button>
+    </header>
+
+    <div id="main-view">
+      <div class="section">
+        <label for="jd-select">Select Job Description</label>
+        <select id="jd-select">
+          <option value="">-- Select a JD --</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <label for="pdf-upload">Upload Profile PDF (from LinkedIn)</label>
+        <input type="file" id="pdf-upload" accept=".pdf">
+        <p class="help-text">Click "More" > "Save to PDF" on LinkedIn first.</p>
+      </div>
+
+      <div class="actions">
+        <button id="analyze-btn" class="primary-btn" disabled>Analyze Profile</button>
+        <button id="test-ui-btn" class="secondary-btn" style="margin-top: 8px; width: 100%; background: #f3f2ef; color: #666; border: 1px solid #dcdcdc;">Test UI Overlay</button>
+        <button id="add-jd-btn" class="secondary-btn">+ New JD</button>
+      </div>
+
+      <div class="jd-list-container">
+        <h3>Saved JDs</h3>
+        <ul id="jd-list"></ul>
+      </div>
+    </div>
+
+    <div id="jd-form-view" class="hidden">
+      <h2 id="form-title">Add Job Description</h2>
+      <input type="text" id="jd-title" placeholder="Job Title (e.g. Senior Frontend Engineer)">
+      <textarea id="jd-content" placeholder="Paste the full job description here..."></textarea>
+      <div class="form-actions">
+        <button id="save-jd-btn" class="primary-btn">Save JD</button>
+        <button id="cancel-jd-btn" class="secondary-btn">Cancel</button>
+      </div>
+    </div>
+
+    <div id="settings-view" class="hidden">
+      <h2>Settings</h2>
+      <div class="section">
+        <label for="api-key">Gemini API Key</label>
+        <input type="password" id="api-key" placeholder="Enter your Gemini API Key">
+        <p class="help-text">Get your key at <a href="https://aistudio.google.com/app/apikey" target="_blank">AI Studio</a></p>
+      </div>
+      <div class="form-actions">
+        <button id="save-settings-btn" class="primary-btn">Save Settings</button>
+        <button id="back-settings-btn" class="secondary-btn">Back</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
