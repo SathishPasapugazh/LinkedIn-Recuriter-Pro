@@ -4,11 +4,13 @@
 
 let currentJD = '';
 let currentPdfData = '';
+let currentResumeText = '';
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'SHOW_RESULTS') {
     currentJD = request.jd || '';
     currentPdfData = request.pdfData || '';
+    currentResumeText = request.resumeText || '';
     showResultsOverlay(request.data);
     sendResponse({ status: 'displayed' });
   }
@@ -118,6 +120,7 @@ async function handleChatSubmit(input, btn, history) {
       action: 'ASK_FOLLOWUP',
       jd: lastJD,
       pdfData: currentPdfData,
+      resumeText: currentResumeText,
       question: question
     }, (response) => {
       btn.disabled = false;

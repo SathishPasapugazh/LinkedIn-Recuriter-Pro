@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn AI Recruiter Pro",
+  "name": "PDF Viewer & Annotator",
   "version": "1.0.0",
-  "description": "Analyze LinkedIn profiles against JDs using Gemini AI.",
+  "description": "A powerful PDF viewer with annotation capabilities (text, highlight, draw) built with pdf.js.",
   "permissions": [
     "storage",
     "activeTab",

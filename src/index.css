@@ -1,1 +1,20 @@
 @import "tailwindcss";
+@import "pdfjs-dist/web/pdf_viewer.css";
+
+:root {
+  --total-scale-factor: 1;
+}
+
+.annotationLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.annotationEditorLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+}

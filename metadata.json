@@ -1,5 +1,5 @@
 {
-  "name": "LinkedIn AI Recruiter Pro",
-  "description": "A Chrome Extension to analyze LinkedIn profiles against Job Descriptions using Gemini AI.",
+  "name": "AI Recruiter Pro",
+  "description": "An AI-powered recruiter assistant for analyzing LinkedIn profiles against job descriptions using Puter AI.",
   "requestFramePermissions": []
 }

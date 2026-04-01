@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Recruiter Pro</title>
-  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="/src/popup.css">
+  <script src="puter.js"></script>
 </head>
 <body>
   <div class="container">
@@ -29,7 +30,6 @@
 
       <div class="actions">
         <button id="analyze-btn" class="primary-btn" disabled>Analyze Profile</button>
-        <button id="test-ui-btn" class="secondary-btn" style="margin-top: 8px; width: 100%; background: #f3f2ef; color: #666; border: 1px solid #dcdcdc;">Test UI Overlay</button>
         <button id="add-jd-btn" class="secondary-btn">+ New JD</button>
       </div>
 
@@ -52,16 +52,14 @@
     <div id="settings-view" class="hidden">
       <h2>Settings</h2>
       <div class="section">
-        <label for="api-key">Gemini API Key</label>
-        <input type="password" id="api-key" placeholder="Enter your Gemini API Key">
-        <p class="help-text">Get your key at <a href="https://aistudio.google.com/app/apikey" target="_blank">AI Studio</a></p>
+        <p>Puter.js is used for AI analysis. No API key required.</p>
+        <p class="help-text">You will be prompted to log in to Puter if needed.</p>
       </div>
       <div class="form-actions">
-        <button id="save-settings-btn" class="primary-btn">Save Settings</button>
         <button id="back-settings-btn" class="secondary-btn">Back</button>
       </div>
     </div>
   </div>
-  <script src="popup.js"></script>
+  <script type="module" src="/src/popup.js"></script>
 </body>
 </html>
